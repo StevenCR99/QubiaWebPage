@@ -1,8 +1,89 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Qubia";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="bg-dark text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Qubia</h1>
+        <p class="lead text-secondary mt-3">
+            Innovación tecnológica con compromiso ambiental
+        </p>
+        <a asp-action="Careers" class="btn btn-success btn-lg mt-4 px-5">
+            Reclutamiento
+        </a>
+    </div>
+</section>
+
+<section class="container py-5">
+
+    <div class="row g-4">
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body">
+                    <h4 class="fw-bold text-success">🌱 Misión</h4>
+                    <p class="mt-3">
+                        Desarrollar soluciones tecnológicas orientadas al cuidado del medio ambiente,
+                        promoviendo prácticas sostenibles y responsables.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body">
+                    <h4 class="fw-bold text-success">🌍 Visión</h4>
+                    <p class="mt-3">
+                        Ser una empresa líder en innovación ambiental, reconocida por su impacto
+                        positivo en la sociedad y el entorno.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h4 class="fw-bold text-success">👥 ¿Quiénes somos?</h4>
+                    <p class="mt-3">
+                        Qubia es una empresa comprometida con el desarrollo de proyectos tecnológicos
+                        enfocados en la sostenibilidad y la protección del medio ambiente.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h4 class="fw-bold text-success">🚀 Proyectos realizados</h4>
+
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded text-center">
+                                ⚡<br />
+                                <strong>Consumo energético</strong>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded text-center">
+                                ♻️<br />
+                                <strong>Gestión de residuos</strong>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded text-center">
+                                ☀️<br />
+                                <strong>Energías renovables</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
