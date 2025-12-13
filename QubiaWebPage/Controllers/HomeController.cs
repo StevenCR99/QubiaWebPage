@@ -18,6 +18,11 @@ namespace QubiaWebPage.Controllers
             return View();
         }
 
+        public IActionResult Careers()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
