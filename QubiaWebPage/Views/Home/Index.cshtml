@@ -1,7 +1,19 @@
-﻿@{
+﻿@model List<QubiaWebPage.Models.EmpresaInfo>
+
+@{
     ViewData["Title"] = "Qubia";
+
+    string mision = Model.FirstOrDefault(x => x.Seccion == "Misión")?.Contenido
+        ?? "Desarrollar soluciones tecnológicas orientadas al cuidado del medio ambiente, promoviendo prácticas sostenibles y responsables.";
+
+    string vision = Model.FirstOrDefault(x => x.Seccion == "Visión")?.Contenido
+        ?? "Ser una empresa líder en innovación ambiental, reconocida por su impacto positivo en la sociedad y el entorno.";
+
+    string quienes = Model.FirstOrDefault(x => x.Seccion == "Quiénes somos")?.Contenido
+        ?? "Qubia es una empresa comprometida con el desarrollo de proyectos tecnológicos enfocados en la sostenibilidad y la protección del medio ambiente.";
 }
 
+<!-- HERO -->
 <section class="bg-dark text-white py-5">
     <div class="container text-center">
         <h1 class="display-4 fw-bold">Qubia</h1>
@@ -15,7 +27,6 @@
 </section>
 
 <section class="container py-5">
-
     <div class="row g-4">
 
         <div class="col-md-6">
@@ -23,8 +34,7 @@
                 <div class="card-body">
                     <h4 class="fw-bold text-success">🌱 Misión</h4>
                     <p class="mt-3">
-                        Desarrollar soluciones tecnológicas orientadas al cuidado del medio ambiente,
-                        promoviendo prácticas sostenibles y responsables.
+                        @mision
                     </p>
                 </div>
             </div>
@@ -35,8 +45,7 @@
                 <div class="card-body">
                     <h4 class="fw-bold text-success">🌍 Visión</h4>
                     <p class="mt-3">
-                        Ser una empresa líder en innovación ambiental, reconocida por su impacto
-                        positivo en la sociedad y el entorno.
+                        @vision
                     </p>
                 </div>
             </div>
@@ -47,8 +56,7 @@
                 <div class="card-body">
                     <h4 class="fw-bold text-success">👥 ¿Quiénes somos?</h4>
                     <p class="mt-3">
-                        Qubia es una empresa comprometida con el desarrollo de proyectos tecnológicos
-                        enfocados en la sostenibilidad y la protección del medio ambiente.
+                        @quienes
                     </p>
                 </div>
             </div>
@@ -85,5 +93,4 @@
         </div>
 
     </div>
-
 </section>
