@@ -1,4 +1,4 @@
-﻿@model QubiaWebPage.Models.CareerViewModel
+﻿@model QubiaWebPage.Models.Solicitude
 
 @{
     ViewData["Title"] = "Reclutamiento";
@@ -6,7 +6,6 @@
 
 <section class="bg-light py-5">
     <div class="container">
-
         <div class="row justify-content-center">
             <div class="col-lg-7">
 
@@ -16,60 +15,76 @@
                         <h2 class="text-center fw-bold mb-4">
                             Únete a Qubia
                         </h2>
+                        @if (TempData["Success"] != null)
+                        {
+                            <div class="alert alert-success text-center">
+                                @TempData["Success"]
+                            </div>
+                        }
 
-                        <form method="post" enctype="multipart/form-data">
+
+                        <form asp-action="Careers" method="post" enctype="multipart/form-data">
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Nombre completo</label>
-                                    <input class="form-control" />
+                                    <input asp-for="NombreCompleto" class="form-control" />
+                                    <span asp-validation-for="NombreCompleto" class="text-danger"></span>
                                 </div>
 
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Cédula</label>
-                                    <input class="form-control" />
+                                    <input asp-for="Cedula" class="form-control" />
+                                    <span asp-validation-for="Cedula" class="text-danger"></span>
                                 </div>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" />
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Número de teléfono</label>
-                                <input class="form-control" />
+                                <input asp-for="Telefono" class="form-control" />
+                                <span asp-validation-for="Telefono" class="text-danger"></span>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Estudios realizados</label>
-                                <input class="form-control" />
+                                <input asp-for="Estudios" class="form-control" />
+                                <span asp-validation-for="Estudios" class="text-danger"></span>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">¿Cómo conoció la empresa?</label>
-                                <input class="form-control" />
+                                <input asp-for="ConocioEmpresa" class="form-control" />
+                                <span asp-validation-for="ConocioEmpresa" class="text-danger"></span>
                             </div>
 
                             <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" />
+                                <input asp-for="ActualmenteTrabaja" class="form-check-input" />
                                 <label class="form-check-label">
                                     Actualmente trabaja
                                 </label>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">Expectativa salarial</label>
-                                <input type="number" class="form-control" />
+                                <label class="form-label">Expectativa salarial (₡)</label>
+                                <input asp-for="ExpectativaSalarial" class="form-control" />
+                                <span asp-validation-for="ExpectativaSalarial" class="text-danger"></span>
                             </div>
 
                             <div class="mb-4">
                                 <label class="form-label">Currículum (CV)</label>
-                                <input type="file" class="form-control" />
+                                <input type="file" name="cv" class="form-control" />
                             </div>
 
                             <div class="d-grid">
-                                <button class="btn btn-success btn-lg">
+                                <button type="submit" class="btn btn-success btn-lg">
                                     Enviar solicitud
                                 </button>
                             </div>
@@ -81,6 +96,9 @@
 
             </div>
         </div>
-
     </div>
 </section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
